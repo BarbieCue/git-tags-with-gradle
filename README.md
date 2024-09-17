@@ -10,7 +10,7 @@ create git tags using Gradle.
 
 - Plain Gradle task
 - No plugins
-- 4 lines of code
+- 6 lines of code
 
 
 [*build.gradle.kts*](build.gradle.kts)
@@ -18,9 +18,11 @@ create git tags using Gradle.
 group = "org.example"
 version = "1.0.0"
 
-tasks.register<Task>("gitTagVersion") {
-    exec { commandLine("git", "tag", version) }
-    exec { commandLine("git", "push", "origin", "tag", version) }
+tasks.register("gitTagVersion") {
+    doLast {
+        exec { commandLine("git", "tag", "-a", version, "-m", "Release version $version") }
+        exec { commandLine("git", "push", "origin", "tag", version) }
+    }
 }
 ```
 

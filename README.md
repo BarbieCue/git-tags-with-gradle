@@ -8,9 +8,9 @@ should be set during the publication of a release.
 This is a minimalistic example on how to
 create git tags using Gradle.
 
-- Plain Gradle task
-- No plugins
-- 6 lines of code
+- **A simple Gradle task**
+- **6 lines of code**
+- **No external dependencies**
 
 
 [*build.gradle.kts*](build.gradle.kts)
